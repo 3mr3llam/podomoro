@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "81814823510",
+    "firebase_url": "https://test-messaging-service.firebaseio.com",
+    "project_id": "test-messaging-service",
+    "storage_bucket": "test-messaging-service.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81814823510:android:19131524c790bc611e11f7",
+        "android_client_info": {
+          "package_name": "com.pharaohapp.podomoro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81814823510-b3pd0gar65ogbtetvidah36v33pgf6os.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHL4LEwFZncS1PRcTMhT5eS6axnqHXkRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81814823510-b3pd0gar65ogbtetvidah36v33pgf6os.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "81814823510-53ma308ds0h7q97shsc8bjajtfqhut5j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pomodoroTimer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
