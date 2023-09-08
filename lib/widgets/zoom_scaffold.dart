@@ -27,13 +27,13 @@ class _ZoomScaffoldState extends State<ZoomScaffold> with TickerProviderStateMix
   Curve slideOutCurve = const Interval(0.0, 1.0, curve: Curves.easeOut);
   Curve slideInCurve = const Interval(0.0, 1.0, curve: Curves.easeOut);
 
-  MenuController? _menuController;
+  XMenuController? _menuController;
 
   @override
   initState() {
     super.initState();
-    Get.put(MenuController());
-    _menuController = Get.find<MenuController>();
+    Get.put(XMenuController());
+    _menuController = Get.find<XMenuController>();
   }
 
   createContentDisplay() {
@@ -49,7 +49,7 @@ class _ZoomScaffoldState extends State<ZoomScaffold> with TickerProviderStateMix
               color: Colors.grey.shade300,
             ),
             onPressed: () {
-              Get.find<MenuController>().toggle();
+              Get.find<XMenuController>().toggle();
             }),
       ),
       body: widget.contentScreen.contentBuilder(context),
@@ -129,12 +129,12 @@ class ZoomScaffoldMenuController extends StatefulWidget {
 }
 
 class ZoomScaffoldMenuControllerState extends State<ZoomScaffoldMenuController> with TickerProviderStateMixin {
-  MenuController? menuController;
+  XMenuController? menuController;
 
   @override
   void initState() {
-    Get.put(MenuController());
-    menuController = Get.find<MenuController>();
+    Get.put(XMenuController());
+    menuController = Get.find<XMenuController>();
     super.initState();
   }
 
@@ -144,7 +144,7 @@ class ZoomScaffoldMenuControllerState extends State<ZoomScaffoldMenuController> 
   }
 }
 
-typedef ZoomScaffoldBuilder = Widget Function(BuildContext context, MenuController menuController);
+typedef ZoomScaffoldBuilder = Widget Function(BuildContext context, XMenuController menuController);
 
 class Layout {
   final WidgetBuilder contentBuilder;

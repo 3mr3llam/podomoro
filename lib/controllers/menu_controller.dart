@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pomodoro_timer/utils/constants.dart';
 
-class MenuController extends GetxController with GetSingleTickerProviderStateMixin {
+class XMenuController extends GetxController with GetSingleTickerProviderStateMixin {
   // final TickerProvider vsync;
   late AnimationController? _animationController;
   MenuState state = MenuState.closed;

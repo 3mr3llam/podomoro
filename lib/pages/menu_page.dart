@@ -41,18 +41,16 @@ class _MenuPageState extends State<MenuPage> {
                 icon: Icons.settings,
                 title: 'settings'.tr,
                 onPress: (context) {
-                  Get.find<MenuController>().toggle();
+                  Get.find<XMenuController>().toggle();
                   Get.to(() => const SettingsPage());
                 }),
             MenuItem(
                 icon: Icons.privacy_tip_outlined,
                 title: 'privacyPolicy'.tr,
                 onPress: (context) {
-                  Get.find<MenuController>().toggle();
+                  Get.find<XMenuController>().toggle();
                   if (!kIsWeb &&
-                      (defaultTargetPlatform == TargetPlatform.linux ||
-                          defaultTargetPlatform == TargetPlatform.macOS ||
-                          defaultTargetPlatform == TargetPlatform.windows)) {
+                      (defaultTargetPlatform == TargetPlatform.linux || defaultTargetPlatform == TargetPlatform.macOS || defaultTargetPlatform == TargetPlatform.windows)) {
                     _launchURL('https://sites.google.com/view/podomoro-privacy');
                   } else {
                     Get.to(
@@ -64,11 +62,9 @@ class _MenuPageState extends State<MenuPage> {
                 icon: Icons.line_style_rounded,
                 title: 'termsConditions'.tr,
                 onPress: (context) {
-                  Get.find<MenuController>().toggle();
+                  Get.find<XMenuController>().toggle();
                   if (!kIsWeb &&
-                      (defaultTargetPlatform == TargetPlatform.linux ||
-                          defaultTargetPlatform == TargetPlatform.macOS ||
-                          defaultTargetPlatform == TargetPlatform.windows)) {
+                      (defaultTargetPlatform == TargetPlatform.linux || defaultTargetPlatform == TargetPlatform.macOS || defaultTargetPlatform == TargetPlatform.windows)) {
                     _launchURL('https://sites.google.com/view/podomoro-terms');
                   } else {
                     Get.to(
@@ -80,7 +76,7 @@ class _MenuPageState extends State<MenuPage> {
                 icon: Icons.share_outlined,
                 title: 'share'.tr,
                 onPress: (context) async {
-                  Get.find<MenuController>().toggle();
+                  Get.find<XMenuController>().toggle();
                   final box = context.findRenderObject() as RenderBox?;
 
                   await Share.share(
@@ -96,12 +92,9 @@ class _MenuPageState extends State<MenuPage> {
                 icon: Icons.star_rate_outlined,
                 title: 'rateUs'.tr,
                 onPress: (context) {
-                  Get.find<MenuController>().toggle();
+                  Get.find<XMenuController>().toggle();
                   widget.rateMyApp.showStarRateDialog(context,
-                      title: 'rateThisApp'.tr,
-                      message: 'rateThisAppMessage'.tr,
-                      starRatingOptions: const StarRatingOptions(initialRating: 4),
-                      actionsBuilder: actionBuilder);
+                      title: 'rateThisApp'.tr, message: 'rateThisAppMessage'.tr, starRatingOptions: const StarRatingOptions(initialRating: 4), actionsBuilder: actionBuilder);
                 },
               ),
             );
@@ -110,11 +103,11 @@ class _MenuPageState extends State<MenuPage> {
             onPanUpdate: (details) {
               //on swiping left
               if (details.delta.dx < -6) {
-                Get.find<MenuController>().toggle();
+                Get.find<XMenuController>().toggle();
               }
             },
             child: GestureDetector(
-              onTap: () => Get.find<MenuController>().toggle(),
+              onTap: () => Get.find<XMenuController>().toggle(),
               child: Container(
                 alignment: Alignment.centerLeft,
                 padding: Get.locale!.languageCode == 'ar'

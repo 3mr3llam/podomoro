@@ -16,7 +16,7 @@ import 'package:pomodoro_timer/widgets/rate_app_init.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -28,7 +28,7 @@ void main() async {
   notifyHelper.initializeNotification();
   notifyHelper.requestIOSPermissions();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // Todo Remember to add this in the descrription
@@ -37,6 +37,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static final LocaleController localeController = Get.find<LocaleController>();
+
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override

@@ -51,14 +51,14 @@ class _ServicePageState extends State<ServicePage> {
 class SetTimer {
   int _seconds = 0;
   final _streamController = StreamController<int>.broadcast();
-  Timer? _timer;
+  Timer? timer;
 
   // Getters
   Stream<int> get stream => _streamController.stream;
 
   // Setters
   void start() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) {
       _seconds++;
       _updateSeconds();
     });

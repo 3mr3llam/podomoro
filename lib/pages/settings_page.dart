@@ -17,7 +17,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   PomodoroController podoController = Get.find<PomodoroController>();
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  // final Future<SharedPreferences> prefss = SharedPreferences.getInstance();
   SharedPreferences? prefs;
 
   int? pomodoroCount;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SmallText extends StatelessWidget {
   Color? color;
   final String text;
@@ -9,13 +10,7 @@ class SmallText extends StatelessWidget {
   TextDirection textDirection;
 
   SmallText(
-      {Key? key,
-      this.color = const Color(0xFFccc7c5),
-      required this.text,
-      this.size = 0,
-      this.fontFamily = "Tajawal",
-      this.height = 1.2,
-      this.textDirection = TextDirection.rtl})
+      {Key? key, this.color = const Color(0xFFccc7c5), required this.text, this.size = 0, this.fontFamily = "Tajawal", this.height = 1.2, this.textDirection = TextDirection.rtl})
       : super(key: key);
 
   @override

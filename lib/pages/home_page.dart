@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PomodoroController podoController = Get.find<PomodoroController>();
-  late MenuController _menuController;
+  late XMenuController xmenuController;
   final ScrollController _scrollController = ScrollController();
   late NotifyHelper notifyHelper;
   final service = FlutterBackgroundService();
@@ -101,15 +101,15 @@ class _HomePageState extends State<HomePage> {
       setState(() => authStatus = 'PlatformException was thrown');
     }
 
-    final uuid = await AppTrackingTransparency.getAdvertisingIdentifier();
+    // var uuid = await AppTrackingTransparency.getAdvertisingIdentifier();
   }
 
   @override
   void initState() {
     // FlutterNativeSplash.remove();
     if (mounted) {}
-    Get.lazyPut(() => MenuController(), fenix: true);
-    _menuController = Get.find<MenuController>();
+    Get.lazyPut(() => XMenuController(), fenix: true);
+    xmenuController = Get.find<XMenuController>();
     podoController.context = context;
     notifyHelper = NotifyHelper(context);
     notifyHelper.initializeNotification();
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
       init: Get.find<PomodoroController>(),
       builder: (pomodoroController) {
         return GetBuilder(
-          init: Get.find<MenuController>(),
+          init: Get.find<XMenuController>(),
           builder: (menuController) {
             return Scaffold(
               // backgroundColor: bgColor,

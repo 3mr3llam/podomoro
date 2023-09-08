@@ -9,7 +9,7 @@ class Dependencies extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => PomodoroController(), fenix: true);
-    Get.lazyPut(() => MenuController(), fenix: true);
+    Get.lazyPut(() => XMenuController(), fenix: true);
     Get.lazyPut(() => LocaleController(), fenix: true);
   }
 }
