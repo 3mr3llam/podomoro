@@ -41,7 +41,7 @@ class PomodoroController extends GetxController {
   bool? isVibrationOn;
   bool? isAwakeOn;
   bool? autoStartBreak = true;
-  bool? showNotification = true;
+  bool showNotification = false;
 
   bool isStarted = false;
   String? language;
@@ -170,7 +170,7 @@ class PomodoroController extends GetxController {
         remaningTime--;
         _streamController.sink.add(remaningTime);
 
-        if (showNotification! &&
+        if (showNotification &&
             (defaultTargetPlatform == TargetPlatform.android ||
                 defaultTargetPlatform == TargetPlatform.iOS ||
                 defaultTargetPlatform == TargetPlatform.linux ||
@@ -243,7 +243,7 @@ class PomodoroController extends GetxController {
       if (remaningTime > 0) {
         remaningTime--;
         _streamController.sink.add(remaningTime);
-        if (showNotification! &&
+        if (showNotification &&
             (defaultTargetPlatform == TargetPlatform.android ||
                 defaultTargetPlatform == TargetPlatform.iOS ||
                 defaultTargetPlatform == TargetPlatform.linux ||

@@ -42,7 +42,7 @@ dependencies:
   # webview_flutter: ^3.0.4
   webviewx: ^0.2.1
   share_plus: ^6.2.0
-  numberpicker: ^2.1.1
+  numberpicker: ^2.1.2
   flutter_switch: ^0.3.2
   shared_preferences: ^2.0.15
   vibration: ^1.7.6

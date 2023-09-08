@@ -32,6 +32,7 @@ void main() async {
 }
 
 // Todo Remember to add this in the descrription
+// <a href="https://www.freepik.com/free-vector/work-time-concept-illustration_7117898.htm#query=pomodoro&position=6&from_view=search&track=sph">Image by storyset</a> on Freepik
 // <a href="https://www.freepik.com/free-vector/404-error-abstract-concept-illustration_11668755.htm#query=error&position=2&from_view=keyword">Image by vectorjuice</a> on Freepik
 // Sound Effect by <a href="https://pixabay.com/users/studioalivioglobal-28281460/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=123742">StudioAlivioGlobal</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=123742">Pixabay</a>
 class MyApp extends StatelessWidget {

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pomodoro_timer/pages/home_page.dart';
-import 'package:pomodoro_timer/pages/onboarding_page.dart';
 import 'package:pomodoro_timer/utils/constants.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,11 +30,11 @@ class _SplashPageState extends State<SplashPage> {
     initPrefs();
 
     Timer(const Duration(milliseconds: 1500), () {
-      if (prefs.containsKey(showOnBoardingKey) && prefs.getBool(showOnBoardingKey)!) {
-        Get.off(() => const OnboardingPage(), arguments: [widget.rateMyApp]);
-      } else {
-        Get.off(() => HomePage(rateMyApp: widget.rateMyApp));
-      }
+      // if (prefs.containsKey(showOnBoardingKey) && prefs.getBool(showOnBoardingKey)!) {
+      //   Get.off(() => const OnboardingPage(), arguments: [widget.rateMyApp]);
+      // } else {
+      Get.off(() => HomePage(rateMyApp: widget.rateMyApp));
+      // }
     });
   }
 
