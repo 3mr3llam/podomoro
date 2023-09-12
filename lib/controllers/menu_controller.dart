@@ -10,7 +10,6 @@ class XMenuController extends GetxController with GetSingleTickerProviderStateMi
   // MenuController({required this.vsync}) : _animationController = AnimationController(vsync: vsync) {
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     _animationController = AnimationController(vsync: this)
       ..duration = const Duration(milliseconds: menuAnimationDuration)

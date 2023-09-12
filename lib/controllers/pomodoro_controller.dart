@@ -411,7 +411,7 @@ class PomodoroController extends GetxController {
     try {
       notifyHelper.cancelNotification();
     } catch (e) {
-      print(e);
+      Get.snackbar("error".tr, "notificationError".tr);
     }
     if (!isStarted) {
       showNotification = value;

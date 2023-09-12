@@ -55,7 +55,7 @@ class _SettingsPageState extends State<SettingsPage> {
     isVibrationOn = podoController.prefs.getBool(vibrationKey) ?? true;
     isAwakeOn = podoController.prefs.getBool(awakeKey) ?? false;
 
-    language = (podoController.prefs.containsKey(langCodeKey) ? (podoController.prefs.getString(langCodeKey)! == 'ar' ? false : true) : false);
+    language = (podoController.prefs.containsKey(langCodeKey) ? (podoController.prefs.getString(langCodeKey)! == 'en' ? false : true) : false);
   }
 
   @override

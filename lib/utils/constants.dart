@@ -37,18 +37,22 @@ const Map<PomodoroStatus, MaterialColor> statusColors = {
   PomodoroStatus.setFinished: Colors.orange,
 };
 
-const String appName = 'Podomoro';
-const String googlePlayIdentifier = 'com.pharaohapp.podomoro';
-const String appStoreIdentifier = 'com.pharaohapp.podomoro';
+const String appName = "Podomoro";
+const String privacyLink = "https://sites.google.com/view/podomoro-privacy";
+const String termsLink = "https://sites.google.com/view/podomoro-terms";
+// const String googlePlayIdentifier = 'com.pharaohapp.podomoro';
+// const String appStoreIdentifier = 'com.pharaohapp.podomoro';
 
 const primaryColor = Color(0xFF2697FF);
 const secondaryColor = Color(0xFF2A2D3E);
 const bgColor = Color(0xFF212332);
 const Color splashBackgroundColor = Color(0xFF212332);
 const whiteColor = Colors.white;
+const disabledColor = Color.fromARGB(255, 245, 188, 113);
 
 const int menuAnimationDuration = 400;
 
+// Keys for saved settings and notification
 const String pomodoroTotalCountKey = "pomodoroTotalCountKey";
 const String pomodoroKey = "pomodoroKey";
 const String shortBreakKey = "shortBreakKey";

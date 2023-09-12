@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:pomodoro_timer/controllers/menu_controller.dart';
 import 'package:pomodoro_timer/controllers/pomodoro_controller.dart';
 import 'package:pomodoro_timer/pages/privacy_page.dart';
@@ -23,7 +24,7 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   PomodoroController podoController = Get.find<PomodoroController>();
-
+  PackageInfo? packageInfo;
   late List<MenuItem> options;
 
   @override
@@ -51,7 +52,7 @@ class _MenuPageState extends State<MenuPage> {
                   Get.find<XMenuController>().toggle();
                   if (!kIsWeb &&
                       (defaultTargetPlatform == TargetPlatform.linux || defaultTargetPlatform == TargetPlatform.macOS || defaultTargetPlatform == TargetPlatform.windows)) {
-                    _launchURL('https://sites.google.com/view/podomoro-privacy');
+                    _launchURL(privacyLink);
                   } else {
                     Get.to(
                       () => const PrivacyPage(),
@@ -65,7 +66,7 @@ class _MenuPageState extends State<MenuPage> {
                   Get.find<XMenuController>().toggle();
                   if (!kIsWeb &&
                       (defaultTargetPlatform == TargetPlatform.linux || defaultTargetPlatform == TargetPlatform.macOS || defaultTargetPlatform == TargetPlatform.windows)) {
-                    _launchURL('https://sites.google.com/view/podomoro-terms');
+                    _launchURL(termsLink);
                   } else {
                     Get.to(
                       () => const TermsPage(),
@@ -78,9 +79,11 @@ class _MenuPageState extends State<MenuPage> {
                 onPress: (context) async {
                   Get.find<XMenuController>().toggle();
                   final box = context.findRenderObject() as RenderBox?;
+                  packageInfo = await PackageInfo.fromPlatform();
+                  final String packageName = packageInfo!.packageName;
 
                   await Share.share(
-                    '${'checkThisApp'.tr} https://play.google.com/store/apps/details?id=$googlePlayIdentifier',
+                    '${'checkThisApp'.tr} https://play.google.com/store/apps/details?id=$packageName',
                     sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
                   );
                 }),

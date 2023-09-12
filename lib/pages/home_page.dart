@@ -34,59 +34,6 @@ class _HomePageState extends State<HomePage> {
   String authStatus = 'Unknown';
   String mainBtnText = "btnTextStart".tr;
 
-  Future<bool> _willPopCallback() async {
-    bool goBack = false;
-
-    // if (canNavigate) {
-    //   _controller.goBack();
-    //   return false;
-    // } else {
-    await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(
-          'confirmation'.tr,
-          style: const TextStyle(color: Colors.purple),
-          textAlign: Get.locale!.languageCode == 'ar' ? TextAlign.right : TextAlign.left,
-        ),
-        // Are you sure?
-        content: Text('exitapp'.tr, textAlign: Get.locale!.languageCode == 'ar' ? TextAlign.right : TextAlign.left),
-        // Do you want to go back?
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              // SystemNavigator.pop();
-              Navigator.of(context).pop();
-
-              setState(() {
-                goBack = false;
-              });
-            },
-            child: Text("no".tr, textAlign: TextAlign.center), // No
-          ),
-          TextButton(
-            onPressed: () {
-              // Navigator.of(context).pop();
-              // Navigator.of(context, rootNavigator: true).maybePop(false);
-              SystemNavigator.pop();
-              setState(() {
-                goBack = true;
-              });
-            },
-            child: Text(
-              "yes".tr,
-              textAlign: TextAlign.center,
-            ), // Yes
-          ),
-        ],
-      ),
-    );
-
-    if (goBack) Navigator.pop(context); // If user press Yes pop the page
-    return goBack;
-    // }
-  }
-
   Future<void> initPlugin() async {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -225,6 +172,7 @@ class _HomePageState extends State<HomePage> {
                                           Row(
                                             children: [
                                               Expanded(
+                                                flex: 2,
                                                 child: CustomButton(
                                                   onTap: () async {
                                                     /* if (!kIsWeb &&
@@ -249,10 +197,13 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                               Expanded(
                                                 child: CustomButton(
-                                                  onTap: () {
-                                                    // service.invoke("stopService");
-                                                    podoController.resetBtnPressed();
-                                                  },
+                                                  onTap: podoController.isStarted ? podoController.resetBtnPressed : null,
+
+                                                  // () {
+                                                  //   // service.invoke("stopService");
+                                                  //   podoController.resetBtnPressed();
+                                                  // },
+
                                                   text: "btnTextReset".tr,
                                                 ),
                                               ),

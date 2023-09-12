@@ -88,8 +88,8 @@ void onStart(ServiceInstance service) async {
   });
 
   service.on('mainBtnPressed').listen((event) {
-    podoController.mainBtnPressed((Function ControllerFunction) {
-      ControllerFunction();
+    podoController.mainBtnPressed((Function controllerFunction) {
+      controllerFunction();
       // print("time ${podoController.remaningTime}");
 
       service.invoke(

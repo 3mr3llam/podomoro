@@ -48,7 +48,8 @@ class Languages extends Translations {
           'next': 'التالى',
           'skip': 'التخطى',
           'done': 'انتهاء',
-          'language': 'اللغة'
+          'language': 'اللغة',
+          'notificationError': 'حدث خطأ مع التنبيه'
         },
         'en': {
           'warning': 'Warning',
@@ -95,7 +96,8 @@ class Languages extends Translations {
           'next': 'NEXT',
           'skip': 'SKIP',
           'done': 'DONE',
-          'language': 'Language'
+          'language': 'Language',
+          'notificationError': 'There was an error with notifications'
         },
       };
 }
