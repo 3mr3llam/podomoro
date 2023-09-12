@@ -1,9 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pomodoro_timer/controllers/locale_controller.dart';
 import 'package:pomodoro_timer/controllers/pomodoro_controller.dart';
-import 'package:pomodoro_timer/firebase_options.dart';
 import 'package:pomodoro_timer/notification_service.dart';
 import 'package:pomodoro_timer/pages/error_page.dart';
 import 'package:pomodoro_timer/pages/splash_page.dart';
@@ -18,9 +16,9 @@ import 'package:responsive_framework/responsive_framework.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   Get.lazyPut(() => PomodoroController(), fenix: true);
   init();

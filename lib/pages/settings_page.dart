@@ -32,7 +32,7 @@ class _SettingsPageState extends State<SettingsPage> {
   bool? isAwakeOn;
   bool? autoStarted;
 
-  bool? language;
+  bool language = false;
 
   initPrefs() async {
     prefs = await SharedPreferences.getInstance();
@@ -55,7 +55,7 @@ class _SettingsPageState extends State<SettingsPage> {
     isVibrationOn = podoController.prefs.getBool(vibrationKey) ?? true;
     isAwakeOn = podoController.prefs.getBool(awakeKey) ?? false;
 
-    language = (podoController.prefs.containsKey(langCodeKey) ? (podoController.prefs.getString(langCodeKey)! == 'en' ? false : true) : false);
+    language = (podoController.prefs.containsKey(langCodeKey) ? (podoController.prefs.getString(langCodeKey)! == 'ar' ? false : true) : true);
   }
 
   @override
@@ -146,7 +146,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             ],
                           )
                         : Container(),
-                    _buildLanguageSwitchCard("language".tr, language ?? false, (bool value) {
+                    _buildLanguageSwitchCard("language".tr, language, (bool value) {
                       setState(() {
                         language = value;
                       });
@@ -258,8 +258,8 @@ class _SettingsPageState extends State<SettingsPage> {
               showOnOff: true,
               activeColor: Colors.blue.shade700,
               inactiveColor: Colors.blue.shade700,
-              inactiveText: "العربية",
-              activeText: "English",
+              inactiveText: "English",
+              activeText: "العربية",
               onToggle: (val) {
                 callback(val);
               },
