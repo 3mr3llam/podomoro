@@ -104,7 +104,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       });
                       podoController.saveLongBreak(longBreakKey, value);
                     }),
-                    _buildTimerCard("longBreakAfter".tr, longBreakAfter ?? pomodoroPerSet, 1, 120, (int value) {
+                    _buildTimerCard("longBreakAfter".tr, longBreakAfter ?? pomodoroPerSet, 1, 20, (int value) {
                       setState(() {
                         longBreakAfter = value;
                       });
@@ -164,13 +164,13 @@ class _SettingsPageState extends State<SettingsPage> {
     return Card(
       color: secondaryColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 16.0, color: Colors.white),
+              style: const TextStyle(fontSize: 14.0, color: Colors.white),
             ),
             NumberPicker(
               value: value,
@@ -178,10 +178,10 @@ class _SettingsPageState extends State<SettingsPage> {
               maxValue: maxValue,
               step: 1,
               itemHeight: 40,
-              itemWidth: 40,
+              itemWidth: 50,
               haptics: true,
               textStyle: const TextStyle(color: Colors.white38),
-              selectedTextStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22.0),
+              selectedTextStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0),
               axis: Axis.horizontal,
               onChanged: (value) {
                 callback(value);
@@ -201,19 +201,19 @@ class _SettingsPageState extends State<SettingsPage> {
     return Card(
       color: secondaryColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 16.0, color: Colors.white),
+              style: const TextStyle(fontSize: 14.0, color: Colors.white),
             ),
             FlutterSwitch(
               width: 100.0,
               height: 40.0,
-              valueFontSize: 18.0,
-              toggleSize: 18.0,
+              valueFontSize: 14.0,
+              toggleSize: 14.0,
               value: switchValue,
               borderRadius: 30.0,
               padding: 8.0,
@@ -250,8 +250,8 @@ class _SettingsPageState extends State<SettingsPage> {
             FlutterSwitch(
               width: 150.0,
               height: 40.0,
-              valueFontSize: 18.0,
-              toggleSize: 18.0,
+              valueFontSize: 14.0,
+              toggleSize: 14.0,
               value: switchValue,
               borderRadius: 30.0,
               padding: 8.0,
